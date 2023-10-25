@@ -8,6 +8,12 @@ body {
   background: linear-gradient(#4a4e69, #22223b);
 }
 
+.arrow,
+.dot {
+  cursor: pointer;
+  user-select: none;
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
@@ -19,7 +25,8 @@ body {
 .images-container {
   position: relative;
   height: 80dvh;
-  width: 30dvw;
+  width: 50vmin;
+  min-width: 350px;
   margin-bottom: 1rem;
 }
 
@@ -31,20 +38,17 @@ body {
   width: 100%;
   height: 100%;
   min-height: 500px;
-  min-width: 350px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
   border: 2px solid white;
   border-radius: 10px;
-
-  display: none;
+  opacity: 0;
+  transition: opacity 2s;
 }
 
 .active {
-  z-index: 0;
-  display: block;
+  opacity: 1;
 }
 
 .image1 {
@@ -65,6 +69,24 @@ body {
 
 .image5 {
   background-image: url("./Assets/duck5.jpg");
+}
+
+.arrow {
+  color: wheat;
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.left-arrow {
+  left: 0;
+  transform: translate(0, -50%) rotate(180deg);
+}
+
+.right-arrow {
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .dots-container {
